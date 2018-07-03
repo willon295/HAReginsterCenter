@@ -1,0 +1,15 @@
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      # 指定注册中心的地址
+      defaultZone: http://reg-node01:9001/eureka/,http://reg-node02:9002/eureka/,http://reg-node03:9003/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  application:
+    name: service-provider02

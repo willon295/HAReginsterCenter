@@ -1,0 +1,17 @@
+server:
+  port: 9090
+eureka:
+  client:
+    service-url:
+      defaultZone: http://reg-node01:9001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  application:
+    name: feign-consumer
+feign:
+  hystrix:
+    enabled: true

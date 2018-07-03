@@ -1,0 +1,22 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: reg-node01
+
+
+eureka:
+  instance:
+    #指定主机名
+    hostname: reg-node01
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #指定其他注册中心地址
+      defaultZone: http://reg-node02:9002/eureka/,http://reg-node03:9003/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
